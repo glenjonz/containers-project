@@ -22,9 +22,9 @@ jobs:
 
         - name: Build and push container
           run: |
-            docker build -t mycontainer;v1 -f Containerfile
-            docker tag mycontainer;v1 docker.io/${{ secrets.DOCKER-USERNAME }}/mycontainer;v1
-            docker push docker.io/${{ secrets.DOCKER-USERNAME }}/mycontainer;v1
+            podman build -t mycontainer;v1 .
+            podman tag mycontainer;v1 docker.io/${{ secrets.DOCKER-USERNAME }}/mycontainer;v1
+            podman push docker.io/${{ secrets.DOCKER-USERNAME }}/mycontainer;v1
         
 
     
